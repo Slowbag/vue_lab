@@ -24,6 +24,7 @@ var app = new Vue({
             isActive: false,
         },
         visibleMine: true,
+        vizualMas:[],
         mas:[],
         MasivData:[],
         Error:'',
@@ -76,6 +77,7 @@ var app = new Vue({
             for (let i = 0; i < m; i++)
             {
                 this.mas[i] = [];
+                this.vizualMas[i] = [];
                 if(i != 0)
                 {
                     for (let j = 0; j == 0; j++)
@@ -83,6 +85,7 @@ var app = new Vue({
                         if(this.mas[i][j] == this.mas[i][0])
                         {
                             this.mas[i][j] = summ++;
+                            this.vizualMas[i][j] = '&#11015';
                         }   
                     }
                 } 
@@ -91,21 +94,25 @@ var app = new Vue({
             for(let i = 5; i >= 2; i--)
             {
                 this.mas[i][1] = summ++;
+                this.vizualMas[i][1] = '&#11014';
             }
 
             for (let i = 3; i < m; i++)
             {
                 this.mas[i][2] = summ++;
+                this.vizualMas[i][2] = '&#11015';
             }
 
             for(let i = 5; i >= 4; i--)
             {
                 this.mas[i][3] = summ++;
+                this.vizualMas[i][3] = '&#11014';
             }
 
             for(let i = 4; i <= 4; i++)
             {
                 this.mas[5][i] = summ++;
+                this.vizualMas[5][i] = '&#11015';
             }
 
             for(let i = 5; i >= 0; i--)
@@ -115,6 +122,7 @@ var app = new Vue({
                     if(i === j)
                     {
                         this.mas[i][j] = summ++;
+                        this.vizualMas[i][j] = '&#8598';
                     }
                 }
             }
@@ -126,6 +134,7 @@ var app = new Vue({
                     if(i+1 === j)
                     {
                         this.mas[i][j] = summ++;
+                        this.vizualMas[i][j] = '&#8600';
                     }
                 }
             }
@@ -137,6 +146,7 @@ var app = new Vue({
                     if(i+2 === j)
                     {
                         this.mas[i][j] = summ++;
+                        this.vizualMas[i][j] = '&#8598';
                     }
                 }
             }
@@ -148,6 +158,7 @@ var app = new Vue({
                     if(i+3 === j)
                     {
                         this.mas[i][j] = summ++;
+                        this.vizualMas[i][j] = '&#8600';
                     }
                 }
             }
@@ -159,6 +170,7 @@ var app = new Vue({
                     if(i+4 === j)
                     {
                         this.mas[i][j] = summ++;
+                        this.vizualMas[i][j] = '&#8598';
                     }
                 }
             }
@@ -170,6 +182,7 @@ var app = new Vue({
                     if(i+5 === j)
                     {
                         this.mas[i][j] = summ++;
+                        this.vizualMas[i][j] = '&#8600';
                     }
                 }
             }
@@ -184,6 +197,17 @@ var app = new Vue({
                    $("#tr_valueMasiv_"+i).append(`<td>${this.mas[i][x]}</td>`);
                 }
             }
+
+            for(let i in this.vizualMas)
+            {
+                $("#vizualMasiv").append(`<tr id="tr_vizualMasiv_${i}"></tr>`);
+                for(let x in this.vizualMas[i])
+                {
+                   $("#tr_vizualMasiv_"+i).append(`<td>${this.vizualMas[i][x]}</td>`);
+                }
+            }
+
+            console.log(this.vizualMas);
         },
     }
 });

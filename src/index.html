@@ -65,21 +65,42 @@
                 </table>
             </div>
 
-            <div class="col-4" v-show="BarMenu.visible">
-                <table class="table" v-show="BarMenu.visible">
-                    <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">#</th>
-                            <th scope="col">#</th>
-                            <th scope="col">#</th>
-                            <th scope="col">#</th>
-                            <th scope="col">#</th>
-                        </tr>
-                    </thead>
-                    <tbody id="valueMasiv">
-                    </tbody>
-                </table>
+            <div class="col-6" v-show="BarMenu.visible">
+                <div class="row">
+                    <div class="col-6">
+                        <table class="table" v-show="BarMenu.visible">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                </tr>
+                            </thead>
+                            <tbody id="valueMasiv">
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="col-6">
+                        <table class="table" v-show="BarMenu.visible">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vizualMasiv">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
                 <button type="button" class="btn btn-primary mb-3" v-on:click="openMatrix">Показать</button>
             </div>
 
