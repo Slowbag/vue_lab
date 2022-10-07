@@ -174,6 +174,8 @@ var app = new Vue({
                 }
             }
             
+            $("#valueMasiv").empty()
+
             for(let i in this.mas)
             {
                 $("#valueMasiv").append(`<tr id="tr_valueMasiv_${i}"></tr>`);
