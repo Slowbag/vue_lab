@@ -8,6 +8,7 @@
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
 
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
 <script src="./script/vue.js"></script>
 </head>
 <body>
@@ -64,8 +65,22 @@
                 </table>
             </div>
 
-            <div class="col-6" v-show="BarMenu.visible">
-                <p>hi</p>
+            <div class="col-4" v-show="BarMenu.visible">
+                <table class="table" v-show="BarMenu.visible">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">#</th>
+                            <th scope="col">#</th>
+                            <th scope="col">#</th>
+                            <th scope="col">#</th>
+                            <th scope="col">#</th>
+                        </tr>
+                    </thead>
+                    <tbody id="valueMasiv">
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary mb-3" v-on:click="openMatrix">Показать</button>
             </div>
 
             <div class="col-3"></div>
