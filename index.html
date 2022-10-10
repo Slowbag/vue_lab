@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Изучаем Vue.js</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+
+<script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+<script src="./script/vue.js"></script>
+</head>
+<body>
+
+    <div class="conteiner">
+        <div class="row" id="app">
+
+            <ul class="nav nav-pills justify-content-center" id="menu">
+                <li class="nav-item">
+                    <a class="nav-link" v-bind:class="{active: isActive}"  @click="main">4LB</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" v-bind:class="{active: BarMenu.isActive}"  @click="additionally">5LB</a>
+                </li>
+            </ul>
+
+            <div class="col-3">
+            </div>
+
+            <div class="col-6" v-show="visibleMine">
+                <form>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">{{Title.name}}</label>
+                        <input type="text" class="form-control" v-model="name" :placeholder="Title.name">
+                        <p>{{Error}}</p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">{{Title.colBaggage}}</label>
+                        <input class="form-control" type="number" v-model="colBaggage" :placeholder="Title.colBaggage">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">{{Title.weightBaggage}}</label>
+                        <input class="form-control" type="number" v-model="weightBaggage" :placeholder="Title.weightBaggage">
+                    </div>
+                    <button type="button" class="btn btn-primary mb-3" @click="save">Сохранить</button>
+                </form>
+                <table class="table" v-show="visible">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">ФИО</th>
+                            <th scope="col">кол. багажа</th>
+                            <th scope="col">общий вес багажа</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(x, index) in MasivData">
+                            <th scope="row">{{index + 1}}</th>
+                            <td>{{x.name}}</td>
+                            <td>{{x.colBaggage}}</td>
+                            <td>{{x.weightBaggage}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="col-6" v-show="BarMenu.visible">
+                <div class="row">
+                    <div class="col-6">
+                        <table class="table" v-show="BarMenu.visible">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                </tr>
+                            </thead>
+                            <tbody id="valueMasiv">
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <div class="col-6">
+                        <table class="table" v-show="BarMenu.visible">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                    <th scope="col">#</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vizualMasiv">
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <button type="button" class="btn btn-primary mb-3" v-on:click="openMatrix">Показать</button>
+            </div>
+
+            <div class="col-3"></div>
+        </div>
+    </div>
+
+<script src="./script/app.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+</body>
+</html>
