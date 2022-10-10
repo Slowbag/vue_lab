@@ -32,18 +32,18 @@
                 <form>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">{{Title.name}}</label>
-                        <input type="text" class="form-control" v-on:input="setNameMessage" :placeholder="Title.name">
+                        <input type="text" class="form-control" v-model="name" :placeholder="Title.name">
                         <p>{{Error}}</p>
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">{{Title.colBaggage}}</label>
-                        <input type="text" class="form-control" v-on:input="setColBaggageMessage" :placeholder="Title.colBaggage">
+                        <input class="form-control" type="number" v-model="colBaggage" :placeholder="Title.colBaggage">
                     </div>
                     <div class="mb-3">
                         <label for="exampleFormControlInput1" class="form-label">{{Title.weightBaggage}}</label>
-                        <input type="text" class="form-control" v-on:input="setWeightMessage" :placeholder="Title.weightBaggage">
+                        <input class="form-control" type="number" v-model="weightBaggage" :placeholder="Title.weightBaggage">
                     </div>
-                    <button type="button" class="btn btn-primary mb-3" v-on:click="save">Сохранить</button>
+                    <button type="button" class="btn btn-primary mb-3" @click="save">Сохранить</button>
                 </form>
                 <table class="table" v-show="visible">
                     <thead>
