@@ -32,12 +32,12 @@ var app = new Vue({
     methods: {
         save()
         {
-            if(this.Message.name === '')
+            if(this.name === '')
             {
                 this.Error = 'Пожалуйста, заполните поле'
             }
             else 
-                if (this.Message.weightBaggage < 30)
+                if (this.weightBaggage < 30)
                 {
                     this.Error = 'Меньше 30'
                 }
