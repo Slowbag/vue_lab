@@ -7,12 +7,10 @@ var app = new Vue({
             colBaggage: 'Введите кол. багажа',
             weightBaggage: 'Введите общий вес багажа',
         },
-        Message:
-        {
-            name: '',
-            colBaggage: '',
-            weightBaggage: '',
-        },
+        Message:[],
+        name:"",
+        weightBaggage:0,
+        colBaggage:0,
         BarMenu:
         {
             visible: false,
@@ -32,19 +30,7 @@ var app = new Vue({
         visible: false,
     },
     methods: {
-        setNameMessage: function(event)
-        {
-            this.Message.name = event.target.value;
-        },
-        setColBaggageMessage: function(event)
-        {
-            this.Message.colBaggage = event.target.value;
-        },
-        setWeightMessage: function(event)
-        {
-            this.Message.weightBaggage = event.target.value;
-        },
-        save: function(event)
+        save()
         {
             if(this.Message.name === '')
             {
@@ -58,7 +44,7 @@ var app = new Vue({
                 else
                 {
                     this.visible = true;
-                    this.MasivData.push(this.Message);
+                    this.MasivData.push({name:this.name,weightBaggage:this.weightBaggage,colBaggage:this.colBaggage});
                 };
             console.log(this.MasivData);
         },
