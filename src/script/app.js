@@ -173,7 +173,8 @@ var app = new Vue({
                 }
             }
             
-            $("#valueMasiv").empty()
+            $("#valueMasiv").empty();
+            $("#vizualMasiv").empty();
 
             for(let i in this.mas)
             {
