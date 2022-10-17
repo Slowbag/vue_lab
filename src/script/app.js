@@ -16,7 +16,7 @@ var app = new Vue({
             visible: false,
             isActive: false,
         },
-        BarMenu:
+        Quiz:
         {
             visible: false,
             isActive: false,
@@ -44,17 +44,21 @@ var app = new Vue({
                 else
                 {
                     this.visible = true;
-                    this.MasivData.push({name:this.name,weightBaggage:this.weightBaggage,colBaggage:this.colBaggage});
+                    this.MasivData.push({name:this.name, weightBaggage:this.weightBaggage, colBaggage:this.colBaggage});
                 };
             console.log(this.MasivData);
         },
         main: function(event)
         {
-            [this.isActive, this.BarMenu.isActive, this.visibleMine, this.BarMenu.visible] = [true, false, true, false];
+            [this.isActive, this.BarMenu.isActive, this.visibleMine, this.BarMenu.visible, this.Quiz.visible, this.Quiz.isActive] = [true, false, true, false, false, false];
         },
         additionally: function(event)
         {
-            [this.isActive, this.BarMenu.isActive, this.visibleMine, this.BarMenu.visible] = [false, true, false, true];
+            [this.isActive, this.BarMenu.isActive, this.visibleMine, this.BarMenu.visible, this.Quiz.visible, this.Quiz.isActive] = [false, true, false, true, false, false];
+        },
+        quiz: function(event)
+        {
+            [this.isActive, this.BarMenu.isActive, this.visibleMine, this.BarMenu.visible, this.Quiz.visible, this.Quiz.isActive] = [false, false, false, false, true, true];
         },
         openMatrix: function(event)
         {
