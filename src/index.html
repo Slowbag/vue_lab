@@ -23,6 +23,9 @@
                 <li class="nav-item">
                     <a class="nav-link" v-bind:class="{active: BarMenu.isActive}"  @click="additionally">5LB</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" v-bind:class="{active: Quiz.isActive}"  @click="quiz">6LB</a>
+                </li>
             </ul>
 
             <div class="col-3">
@@ -102,6 +105,12 @@
                     </div>
                 </div>
                 <button type="button" class="btn btn-primary mb-3" v-on:click="openMatrix">Показать</button>
+            </div>
+
+            <div class="col-6" v-show="Quiz.visible">
+                <div class="wrapper">
+                    <iframe src="quiz.html" width="100%" height="400px" class="quiz-frame"></iframe>
+                </div>
             </div>
 
             <div class="col-3"></div>
